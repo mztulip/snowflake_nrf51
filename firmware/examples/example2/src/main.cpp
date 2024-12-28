@@ -4,7 +4,7 @@
  * @version    $Id$
  * @brief      Snowflake main file.
  *
- * @authors    Pawel Okas
+ * @authors    Pawel Okas, tulip
  * created on: 16-11-2017
  * last modification: 16-11-2017
  *
@@ -56,32 +56,6 @@ std::array<RGB *, 6> leds = {&ledA, &ledF, &ledB, &ledE, &ledC, &ledD};
 
 std::array<uint8_t, 6 * 3> pwm;
 
-void timerInterrupt() {
-    static uint8_t counter;
-
-    for (size_t i = 0; i < leds.size(); i++) {
-        if (pwm[3 * i] > counter) {
-            leds[i]->r.reset();
-        } else {
-            leds[i]->r.set();
-        }
-
-        if (pwm[3 * i + 1] > counter) {
-            leds[i]->g.reset();
-        } else {
-            leds[i]->g.set();
-        }
-
-        if (pwm[3 * i + 2] > counter) {
-            leds[i]->b.reset();
-        } else {
-            leds[i]->b.set();
-        }
-    }
-
-    counter++;
-}
-
 void offAllLeds() {
     for (auto led : leds) {
         led->r.set();
@@ -120,42 +94,34 @@ void pattern2() {
     if (state == 25) state = 0;
 }
 
-void pattern3_init() {
-    timer.prescaler(4);
-    timer.bitMode(nrf51::Timer::BitMode::Width_32Bits);
-    timer.mode(nrf51::Timer::Mode::Timer);
+int pattern_counter = 0;
+bool pattern_select = true;
 
-    timer.enableInterrupt();
-
-    timer.captureCompare[0].enableInterrupt();
-    timer.captureCompare[0].enableTimerClearOnCompare();
-    timer.captureCompare[0].value(50);
-    timer.captureCompare[0].connectInterrupt(timerInterrupt);
-    timer.start();
-}
-void pattern3() {
-    static uint8_t j = 0;
-    uint8_t tmp = pwm[j];
-
-    for (size_t i = 0; i < pwm.size() / 3; i++) {
-        pwm[3 * i + j] += 10;
+void pattern_selection()
+{
+    if ( pattern_counter >= 100)
+    {
+        pattern_counter = 0;
+        pattern_select=!pattern_select;
     }
-    if (pwm[j] < tmp) j++;
-    if (j == 3) j = 0;
+    pattern_counter++;
 }
 
 int main(void) {
-    GPIO button(button_pin, GPIO::Direction::Input);
-
     offAllLeds();
 
-    // pattern3_init();
     while (1) {
         std::this_thread::sleep_for(20ms);
+        if( pattern_select)
+        {
+            pattern1();
+        }
+        else 
+        {
+            pattern2();
+        }
 
-        // pattern1();
-        pattern2();
-        //  pattern3();
+        pattern_selection();
     }
 
     return 0;

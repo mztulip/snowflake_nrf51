@@ -37,6 +37,14 @@ filename=main
 file="$TOOLCHAIN_GPP src/$filename.cpp $INLCUDES -o build/$filename.o $GPP_FLAGS $GPP_DEFINES"
 $file
 
+filename=timer
+file="$TOOLCHAIN_GPP ../../../microhal/microhal/ports/nrf51/$filename.cpp $INLCUDES -o build/$filename.o $GPP_FLAGS $GPP_DEFINES"
+$file
+
+filename=signalSlot
+file="$TOOLCHAIN_GPP ../../../microhal/microhal/core/signalSlot/$filename.cpp $INLCUDES -o build/$filename.o $GPP_FLAGS $GPP_DEFINES"
+$file
+
 filename=empty_port
 file="$TOOLCHAIN_GPP ../../../microhal/microhal/os/noRTOS/$filename.cpp $INLCUDES -o build/$filename.o $GPP_FLAGS $GPP_DEFINES"
 $file
