@@ -102,15 +102,46 @@ void pattern3_init() {
     timer.captureCompare[0].connectInterrupt(timerInterrupt);
     timer.start();
 }
-void pattern3() {
-    static uint8_t j = 0;
-    uint8_t tmp = pwm[j];
 
-    for (size_t i = 0; i < pwm.size() / 3; i++) {
-        pwm[3 * i + j] += 10;
+bool intensity_ramp_calc(uint8_t color_index)
+{
+    static bool direction = true;
+    static int intensity = 0;
+    const int step = 5;
+    bool finished_sequence = false;
+
+    for (size_t led_index = 0; led_index < pwm.size() / 3; led_index++)
+    {
+        if(direction)
+        {
+            intensity += step;
+            if(intensity >= 250)
+            {
+                direction = false;
+            }
+        }
+        else 
+        {
+            intensity -= step;
+            if(intensity <= 0)
+            {
+                direction = true;
+                finished_sequence = true;
+            }
+        }
+        pwm[3 * led_index + color_index] = intensity;
     }
-    if (pwm[j] < tmp) j++;
-    if (j == 3) j = 0;
+    return finished_sequence;
+}
+
+void pattern3() {
+    static uint8_t color_index = 0;
+    uint8_t tmp = pwm[color_index];
+
+    bool finished = intensity_ramp_calc(color_index);
+ 
+    if (finished) color_index++;
+    if (color_index == 3) color_index = 0;
 }
 
 int main(void) {
