@@ -63,13 +63,18 @@ bool blink_enabled = true;
 
 void button_process(void)
 {
-	if(button_check_state())
+	static bool button_last_state = true;
+	bool button_state = button_check_state();
+	if(button_state == false && button_last_state == true)
 	{
-		blink_enabled = true;
-	}
-	else 
-	{
-		blink_enabled = false;
+		if(blink_enabled)
+		{
+			blink_enabled = false;
+		}
+		else 
+		{
+			blink_enabled = true;
+		}
 	}
 }
 
