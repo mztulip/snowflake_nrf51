@@ -64,6 +64,15 @@ bool blink_enabled = true;
 void button_process(void)
 {
 	static bool button_last_state = true;
+	static uint32_t last_check = 0;
+
+	if((loop_counter - last_check) < 12340)
+	{
+		return;
+	}
+
+	last_check = loop_counter;
+
 	bool button_state = button_check_state();
 	if(button_state == false && button_last_state == true)
 	{
@@ -76,6 +85,7 @@ void button_process(void)
 			blink_enabled = true;
 		}
 	}
+	button_last_state = button_state;
 }
 
 int main()
