@@ -10,12 +10,26 @@
 
 const uint32_t LED1 = 18; //P0.18
 
+uint32_t loop_counter = 0;
+
+static uint32_t last_counter = 0;
+
 void delay(void)
 {
     for (volatile uint32_t i = 0; i < 123456; ++i)
     {
 
     }
+}
+
+bool delay_passed(void)
+{
+	if((loop_counter - last_counter) > 123456)
+	{
+		last_counter = loop_counter;
+		return true;
+	}
+	return false;
 }
 
 void led_init(void)
@@ -45,25 +59,50 @@ bool button_check_state(void)
 	return (state & (1<< button)) != 0;
 }
 
+bool blink_enabled = true;
+
+void button_process(void)
+{
+	if(button_check_state())
+	{
+		blink_enabled = true;
+	}
+	else 
+	{
+		blink_enabled = false;
+	}
+}
+
 int main()
 {		
 	led_init();
 	uart_init();
 	button_init();
 	printf("\n\rHello Uart");
-	uint32_t loop_counter = 0;
+	uint32_t hello_counter = 0;
 	while(1)
 	{
-		
-		delay();
-		if(button_check_state())
+		button_process();
+		if(delay_passed())
 		{
-			NRF_GPIO->OUTCLR = (1<<LED1);
-			delay();
-			NRF_GPIO->OUTSET = (1<<LED1);
-		}
+			static bool led_state = true;
+			if(blink_enabled)
+			{
+				if(led_state)
+				{
+					NRF_GPIO->OUTCLR = (1<<LED1);
+					led_state = false;
+				}
+				else 
+				{
+					NRF_GPIO->OUTSET = (1<<LED1);
+					led_state = true;
+				}
 
-		printf("\n\rloop: %ld", loop_counter);
+			}
+			printf("\n\rloop: %ld", hello_counter);
+			hello_counter++;
+		}
 		loop_counter++;
 	}
 }
