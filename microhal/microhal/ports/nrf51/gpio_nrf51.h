@@ -84,9 +84,9 @@ class GPIO : public GPIO_Interface<nrf51::GPIO> {
      * Possible pull type
      */
     typedef enum : uint8_t {
-        NoPull = 0,        //!< NO_PULL
-        PullUp = 3 << 2,   //!< PULL_UP
-        PullDown = 1 << 2  //!< PULL_DOWN
+        NoPull = GPIO_PIN_CNF_PULL_Disabled,        //!< NO_PULL
+        PullUp = GPIO_PIN_CNF_PULL_Pullup,          //!< PULL_UP
+        PullDown = GPIO_PIN_CNF_PULL_Pulldown       //!< PULL_DOWN
     } PullType;
 
  private:
@@ -200,10 +200,11 @@ class GPIO : public GPIO_Interface<nrf51::GPIO> {
      */
     static inline void setDirection(const Port port, const Pin pin, const Direction direction) {
         if (direction == Direction::Input) {
-            reinterpret_cast<volatile GPIO_Type *>(port)->DIRCLR = 1 << pin;
+            // reinterpret_cast<volatile GPIO_Type *>(port)->DIRCLR = 1 << pin; this line is not working
+            reinterpret_cast<volatile GPIO_Type *>(port)->PIN_CNF[pin] = ((uint32_t)GPIO_PIN_CNF_DIR_Input << GPIO_PIN_CNF_DIR_Pos);
         } else {
             reinterpret_cast<volatile GPIO_Type *>(port)->DIRSET = 1 << pin;
-        }
+        }   	
     }
     /** This function set pin direction.
      *
@@ -218,8 +219,8 @@ class GPIO : public GPIO_Interface<nrf51::GPIO> {
      */
     static inline void setPullType(Port port, Pin pin, PullType pullType) {
         uint32_t tmp = reinterpret_cast<volatile GPIO_Type *>(port)->PIN_CNF[pin];
-        tmp &= ~(1 << 2 | 1 << 3);
-        tmp |= pullType;
+        tmp &= ~GPIO_PIN_CNF_PULL_Msk;
+        tmp |= pullType<<GPIO_PIN_CNF_PULL_Pos;
         reinterpret_cast<volatile GPIO_Type *>(port)->PIN_CNF[pin] = tmp;
     }
     /** This function set pin pull type
@@ -237,7 +238,7 @@ class GPIO : public GPIO_Interface<nrf51::GPIO> {
         setDirection(port, pin, static_cast<Direction>(configuration.mode));
         setPullType(port, pin, static_cast<PullType>(configuration.pull));
         uint32_t tmp = reinterpret_cast<volatile GPIO_Type *>(port)->PIN_CNF[pin];
-        tmp &= ~(1 << 10 | 1 << 9 | 1 << 8);
+        tmp &= ~GPIO_PIN_CNF_DRIVE_Msk;
         tmp |= configuration.type;
         reinterpret_cast<volatile GPIO_Type *>(port)->PIN_CNF[pin] = tmp;
     }
