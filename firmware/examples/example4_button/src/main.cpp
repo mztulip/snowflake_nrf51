@@ -73,6 +73,7 @@ class ButtonEdge : public Button
 
     private:
     bool previous_state ;
+    bool onoff_state = true;
 
     public:
 
@@ -88,6 +89,29 @@ class ButtonEdge : public Button
         previous_state = current_state;
         return result;
     }
+
+    bool getSwitchState()
+    {
+        return onoff_state;
+    }
+
+    void process()
+    {
+        if(isfallingEdge())
+        {
+            if(onoff_state)
+            {
+                onoff_state = false;
+            }
+            else
+            {
+                onoff_state = true;
+            }
+        }
+        timeProc();
+    }
+
+  
 };
 
 int main(void) 
@@ -99,23 +123,10 @@ int main(void)
     std::this_thread::sleep_for(200ms); //in real it takes about 2 seconds
     uint8_t pattern_index = 0;
 
-    bool led_state = true;
+ 
     while (1) 
     {
-        
-        if(button.isfallingEdge())
-        {
-            if(led_state)
-            {
-                led_state = false;
-            }
-            else
-            {
-                led_state = true;
-            }
-        }
-
-        if(led_state)
+        if(button.getSwitchState())
         {
             offAllLeds();
         }
@@ -123,7 +134,7 @@ int main(void)
         {
             onAllLeds();
         }
-        button.timeProc();
+        button.process();
     }
 
     return 0;

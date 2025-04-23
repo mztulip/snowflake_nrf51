@@ -24,8 +24,6 @@ Archive member included to satisfy reference by file (symbol)
                               /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
                               /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
-/home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                              build/main.o (memcpy)
 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
                               /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
@@ -106,9 +104,6 @@ Discarded input sections
  .text          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
  .data          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
  .bss           0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
- .text          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
- .data          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
- .bss           0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
  .text          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
  .data          0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
  .bss           0x00000000        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
@@ -159,7 +154,7 @@ LOAD /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5
 LOAD /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a
 END GROUP
 
-.text           0x00000000      0xd6c
+.text           0x00000000      0xd68
  *(.isr_vector)
  .isr_vector    0x00000000       0xc0 build/gcc_startup_nrf51.o
                 0x00000000                __isr_vector
@@ -213,67 +208,64 @@ END GROUP
  .text._Z9onAllLedsv
                 0x00000454       0x3c build/main.o
                 0x00000454                onAllLeds()
- .text.main     0x00000490      0x15c build/main.o
+ .text.main     0x00000490      0x16c build/main.o
                 0x00000490                main
  .text._GLOBAL__sub_I_ledA
-                0x000005ec       0x10 build/main.o
- .text._GLOBAL__sub_D_ledA
                 0x000005fc       0x10 build/main.o
+ .text._GLOBAL__sub_D_ledA
+                0x0000060c       0x10 build/main.o
  .text._ZN8microhal9emptySlotEPv
-                0x0000060c        0x4 build/signalSlot.o
-                0x0000060c                microhal::emptySlot(void*)
+                0x0000061c        0x4 build/signalSlot.o
+                0x0000061c                microhal::emptySlot(void*)
  .text.is_manual_peripheral_setup_needed
-                0x00000610       0x70 build/system_nrf51422.o
+                0x00000620       0x70 build/system_nrf51422.o
  .text.is_disabled_in_debug_needed
-                0x00000680       0x4c build/system_nrf51422.o
+                0x00000690       0x4c build/system_nrf51422.o
  .text.SystemInit
-                0x000006cc       0x3c build/system_nrf51422.o
-                0x000006cc                SystemInit
+                0x000006dc       0x3c build/system_nrf51422.o
+                0x000006dc                SystemInit
  .text.TIMER0_IRQHandler
-                0x00000708       0xb4 build/timer.o
-                0x00000708                TIMER0_IRQHandler
+                0x00000718       0xb4 build/timer.o
+                0x00000718                TIMER0_IRQHandler
  .text.TIMER1_IRQHandler
-                0x000007bc       0xb4 build/timer.o
-                0x000007bc                TIMER1_IRQHandler
+                0x000007cc       0xb4 build/timer.o
+                0x000007cc                TIMER1_IRQHandler
  .text.TIMER2_IRQHandler
-                0x00000870       0xb4 build/timer.o
-                0x00000870                TIMER2_IRQHandler
- .text          0x00000924       0x48 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_aeabi_ldivmod.o)
-                0x00000924                __aeabi_ldivmod
- .text          0x0000096c       0x58 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_muldi3.o)
-                0x0000096c                __aeabi_lmul
-                0x0000096c                __muldi3
- .text          0x000009c4       0x38 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(bpabi.o)
-                0x000009c4                __gnu_ldivmod_helper
- .text          0x000009fc        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x000009fc                __aeabi_ldiv0
-                0x000009fc                __aeabi_idiv0
- .text          0x00000a00       0x18 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_clzdi2.o)
-                0x00000a00                __clzdi2
- .text          0x00000a18      0x1bc /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
-                0x00000a18                __divdi3
- .text          0x00000bd4       0x3c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_clzsi2.o)
-                0x00000bd4                __clzsi2
- .text.exit     0x00000c10       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o)
-                0x00000c10                exit
+                0x00000880       0xb4 build/timer.o
+                0x00000880                TIMER2_IRQHandler
+ .text          0x00000934       0x48 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_aeabi_ldivmod.o)
+                0x00000934                __aeabi_ldivmod
+ .text          0x0000097c       0x58 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_muldi3.o)
+                0x0000097c                __aeabi_lmul
+                0x0000097c                __muldi3
+ .text          0x000009d4       0x38 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(bpabi.o)
+                0x000009d4                __gnu_ldivmod_helper
+ .text          0x00000a0c        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x00000a0c                __aeabi_ldiv0
+                0x00000a0c                __aeabi_idiv0
+ .text          0x00000a10       0x18 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_clzdi2.o)
+                0x00000a10                __clzdi2
+ .text          0x00000a28      0x1bc /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
+                0x00000a28                __divdi3
+ .text          0x00000be4       0x3c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_clzsi2.o)
+                0x00000be4                __clzsi2
+ .text.exit     0x00000c20       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o)
+                0x00000c20                exit
  .text.__libc_init_array
-                0x00000c3c       0x4c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
-                0x00000c3c                __libc_init_array
- .text.memcpy   0x00000c88       0x12 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x00000c88                memcpy
- .text.memset   0x00000c9a       0x10 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
-                0x00000c9a                memset
- *fill*         0x00000caa        0x2 
- .text._exit    0x00000cac        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
-                0x00000cac                _exit
+                0x00000c4c       0x4c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+                0x00000c4c                __libc_init_array
+ .text.memset   0x00000c98       0x10 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+                0x00000c98                memset
+ .text._exit    0x00000ca8        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
+                0x00000ca8                _exit
  *(.init)
- .init          0x00000cb0        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crti.o
-                0x00000cb0                _init
- .init          0x00000cb4        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
+ .init          0x00000cac        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crti.o
+                0x00000cac                _init
+ .init          0x00000cb0        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
  *(.fini)
- .fini          0x00000cbc        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crti.o
-                0x00000cbc                _fini
- .fini          0x00000cc0        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
+ .fini          0x00000cb8        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crti.o
+                0x00000cb8                _fini
+ .fini          0x00000cbc        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -286,84 +278,84 @@ END GROUP
  *(.dtors)
  *(.rodata*)
  .rodata._ZL9ledFR_pin
-                0x00000cc8        0x8 build/main.o
+                0x00000cc4        0x8 build/main.o
  .rodata._ZL9ledBR_pin
-                0x00000cd0        0x8 build/main.o
+                0x00000ccc        0x8 build/main.o
  .rodata._ZL9ledDR_pin
-                0x00000cd8        0x8 build/main.o
+                0x00000cd4        0x8 build/main.o
  .rodata._ZL9ledFB_pin
-                0x00000ce0        0x8 build/main.o
+                0x00000cdc        0x8 build/main.o
  .rodata._ZL9ledBB_pin
-                0x00000ce8        0x8 build/main.o
+                0x00000ce4        0x8 build/main.o
  .rodata._ZL9ledDB_pin
-                0x00000cf0        0x8 build/main.o
+                0x00000cec        0x8 build/main.o
  .rodata._ZL9ledFG_pin
-                0x00000cf8        0x8 build/main.o
+                0x00000cf4        0x8 build/main.o
  .rodata._ZL9ledBG_pin
-                0x00000d00        0x8 build/main.o
+                0x00000cfc        0x8 build/main.o
  .rodata._ZL9ledDG_pin
-                0x00000d08        0x8 build/main.o
+                0x00000d04        0x8 build/main.o
  .rodata._ZL9ledCR_pin
-                0x00000d10        0x8 build/main.o
+                0x00000d0c        0x8 build/main.o
  .rodata._ZL9ledER_pin
-                0x00000d18        0x8 build/main.o
+                0x00000d14        0x8 build/main.o
  .rodata._ZL9ledAR_pin
-                0x00000d20        0x8 build/main.o
+                0x00000d1c        0x8 build/main.o
  .rodata._ZL9ledCB_pin
-                0x00000d28        0x8 build/main.o
+                0x00000d24        0x8 build/main.o
  .rodata._ZL9ledEB_pin
-                0x00000d30        0x8 build/main.o
+                0x00000d2c        0x8 build/main.o
  .rodata._ZL9ledAB_pin
-                0x00000d38        0x8 build/main.o
+                0x00000d34        0x8 build/main.o
  .rodata._ZL10button_pin
-                0x00000d40        0x8 build/main.o
+                0x00000d3c        0x8 build/main.o
  .rodata._ZL9ledCG_pin
-                0x00000d48        0x8 build/main.o
+                0x00000d44        0x8 build/main.o
  .rodata._ZL9ledEG_pin
-                0x00000d50        0x8 build/main.o
+                0x00000d4c        0x8 build/main.o
  .rodata._ZL9ledAG_pin
-                0x00000d58        0x8 build/main.o
+                0x00000d54        0x8 build/main.o
  .rodata.str1.1
-                0x00000d60        0x2 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- *fill*         0x00000d62        0x2 
+                0x00000d5c        0x2 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ *fill*         0x00000d5e        0x2 
  .rodata._global_impure_ptr
-                0x00000d64        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
-                0x00000d64                _global_impure_ptr
+                0x00000d60        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+                0x00000d60                _global_impure_ptr
  *(.eh_frame*)
- .eh_frame      0x00000d68        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
- .eh_frame      0x00000d68        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtend.o
+ .eh_frame      0x00000d64        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000d64        0x4 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtend.o
 
-.glue_7         0x00000d6c        0x0
- .glue_7        0x00000d6c        0x0 linker stubs
+.glue_7         0x00000d68        0x0
+ .glue_7        0x00000d68        0x0 linker stubs
 
-.glue_7t        0x00000d6c        0x0
- .glue_7t       0x00000d6c        0x0 linker stubs
+.glue_7t        0x00000d68        0x0
+ .glue_7t       0x00000d68        0x0 linker stubs
 
-.vfp11_veneer   0x00000d6c        0x0
- .vfp11_veneer  0x00000d6c        0x0 linker stubs
+.vfp11_veneer   0x00000d68        0x0
+ .vfp11_veneer  0x00000d68        0x0 linker stubs
 
-.v4_bx          0x00000d6c        0x0
- .v4_bx         0x00000d6c        0x0 linker stubs
+.v4_bx          0x00000d68        0x0
+ .v4_bx         0x00000d68        0x0 linker stubs
 
-.iplt           0x00000d6c        0x0
- .iplt          0x00000d6c        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
+.iplt           0x00000d68        0x0
+ .iplt          0x00000d68        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000d6c                __exidx_start = .
+                0x00000d68                __exidx_start = .
 
-.ARM.exidx      0x00000d6c        0x8
+.ARM.exidx      0x00000d68        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000d6c        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
- .ARM.exidx     0x00000d74        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00000d68        0x8 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000d70        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
                                   0x8 (size before relaxing)
-                0x00000d74                __exidx_end = .
-                0x00000d74                __etext = .
+                0x00000d70                __exidx_end = .
+                0x00000d70                __etext = .
 
-.rel.dyn        0x00000d74        0x0
- .rel.iplt      0x00000d74        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
+.rel.dyn        0x00000d70        0x0
+ .rel.iplt      0x00000d70        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
 
-.data           0x20000000      0x11c load address 0x00000d74
+.data           0x20000000      0x11c load address 0x00000d70
                 0x20000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -404,10 +396,10 @@ END GROUP
                 0x2000011c                . = ALIGN (0x4)
                 0x2000011c                __data_end__ = .
 
-.igot.plt       0x2000011c        0x0 load address 0x00000e90
+.igot.plt       0x2000011c        0x0 load address 0x00000e8c
  .igot.plt      0x2000011c        0x0 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtbegin.o
 
-.bss            0x2000011c       0xb0 load address 0x00000e90
+.bss            0x2000011c       0xb0 load address 0x00000e8c
                 0x2000011c                . = ALIGN (0x4)
                 0x2000011c                __bss_start__ = .
  *(.bss*)
@@ -491,15 +483,13 @@ OUTPUT(output.elf elf32-littlearm)
  .ARM.attributes
                 0x000002fa       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x00000326       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00000326       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000352       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+                0x00000352       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtend.o
  .ARM.attributes
-                0x0000037e       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtend.o
+                0x0000037e       0x1e /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
  .ARM.attributes
-                0x000003aa       0x1e /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/crtn.o
- .ARM.attributes
-                0x000003c8       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
+                0x0000039c       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
 
 .GCC.command.line
                 0x00000000      0x4fc
@@ -527,23 +517,23 @@ OUTPUT(output.elf elf32-littlearm)
  .comment       0x0000006e       0x6f build/system_nrf51422.o
  .comment       0x0000006e       0x6f build/timer.o
 
-.debug_info     0x00000000     0xc30d
+.debug_info     0x00000000     0xc35f
  .debug_info    0x00000000      0xc9b build/Button.o
  .debug_info    0x00000c9b     0x27b3 build/empty_port.o
  .debug_info    0x0000344e       0xcb build/gcc_startup_nrf51.o
- .debug_info    0x00003519     0x7e33 build/main.o
- .debug_info    0x0000b34c       0xc3 build/signalSlot.o
- .debug_info    0x0000b40f      0x1b4 build/system_nrf51422.o
- .debug_info    0x0000b5c3      0xd4a build/timer.o
+ .debug_info    0x00003519     0x7e85 build/main.o
+ .debug_info    0x0000b39e       0xc3 build/signalSlot.o
+ .debug_info    0x0000b461      0x1b4 build/system_nrf51422.o
+ .debug_info    0x0000b615      0xd4a build/timer.o
 
-.debug_abbrev   0x00000000     0x1800
+.debug_abbrev   0x00000000     0x17da
  .debug_abbrev  0x00000000      0x301 build/Button.o
  .debug_abbrev  0x00000301      0x4c8 build/empty_port.o
  .debug_abbrev  0x000007c9       0x14 build/gcc_startup_nrf51.o
- .debug_abbrev  0x000007dd      0xbe8 build/main.o
- .debug_abbrev  0x000013c5       0x76 build/signalSlot.o
- .debug_abbrev  0x0000143b       0xf1 build/system_nrf51422.o
- .debug_abbrev  0x0000152c      0x2d4 build/timer.o
+ .debug_abbrev  0x000007dd      0xbc2 build/main.o
+ .debug_abbrev  0x0000139f       0x76 build/signalSlot.o
+ .debug_abbrev  0x00001415       0xf1 build/system_nrf51422.o
+ .debug_abbrev  0x00001506      0x2d4 build/timer.o
 
 .debug_aranges  0x00000000      0x138
  .debug_aranges
@@ -561,33 +551,33 @@ OUTPUT(output.elf elf32-littlearm)
  .debug_aranges
                 0x00000108       0x30 build/timer.o
 
-.debug_line     0x00000000     0x1b74
+.debug_line     0x00000000     0x1b7a
  .debug_line    0x00000000      0x2f1 build/Button.o
  .debug_line    0x000002f1      0x67a build/empty_port.o
  .debug_line    0x0000096b       0xa9 build/gcc_startup_nrf51.o
- .debug_line    0x00000a14      0xb91 build/main.o
- .debug_line    0x000015a5       0x7a build/signalSlot.o
- .debug_line    0x0000161f      0x1b1 build/system_nrf51422.o
- .debug_line    0x000017d0      0x3a4 build/timer.o
+ .debug_line    0x00000a14      0xb97 build/main.o
+ .debug_line    0x000015ab       0x7a build/signalSlot.o
+ .debug_line    0x00001625      0x1b1 build/system_nrf51422.o
+ .debug_line    0x000017d6      0x3a4 build/timer.o
 
-.debug_str      0x00000000     0x7e61
+.debug_str      0x00000000     0x7eb6
  .debug_str     0x00000000      0xf7b build/Button.o
                                0x1093 (size before relaxing)
  .debug_str     0x00000f7b     0x1cc0 build/empty_port.o
                                0x2209 (size before relaxing)
- .debug_str     0x00002c3b     0x4703 build/main.o
-                               0x7680 (size before relaxing)
- .debug_str     0x0000733e       0x5e build/signalSlot.o
+ .debug_str     0x00002c3b     0x4758 build/main.o
+                               0x76d5 (size before relaxing)
+ .debug_str     0x00007393       0x5e build/signalSlot.o
                                 0x2c1 (size before relaxing)
- .debug_str     0x0000739c      0x1e4 build/system_nrf51422.o
+ .debug_str     0x000073f1      0x1e4 build/system_nrf51422.o
                                 0x2da (size before relaxing)
- .debug_str     0x00007580      0x8e1 build/timer.o
+ .debug_str     0x000075d5      0x8e1 build/timer.o
                                 0xe72 (size before relaxing)
 
-.debug_loc      0x00000000      0xe3f
+.debug_loc      0x00000000      0xecd
  .debug_loc     0x00000000       0xa5 build/empty_port.o
- .debug_loc     0x000000a5      0xbea build/main.o
- .debug_loc     0x00000c8f      0x1b0 build/timer.o
+ .debug_loc     0x000000a5      0xc78 build/main.o
+ .debug_loc     0x00000d1d      0x1b0 build/timer.o
 
 .debug_ranges   0x00000000       0xb0
  .debug_ranges  0x00000000       0x18 build/empty_port.o
@@ -596,17 +586,16 @@ OUTPUT(output.elf elf32-littlearm)
  .debug_ranges  0x00000068       0x28 build/system_nrf51422.o
  .debug_ranges  0x00000090       0x20 build/timer.o
 
-.debug_frame    0x00000000      0x35c
+.debug_frame    0x00000000      0x330
  .debug_frame   0x00000000       0x4c build/empty_port.o
- .debug_frame   0x0000004c       0xe4 build/main.o
- .debug_frame   0x00000130       0x20 build/signalSlot.o
- .debug_frame   0x00000150       0x58 build/system_nrf51422.o
- .debug_frame   0x000001a8       0x58 build/timer.o
- .debug_frame   0x00000200       0x34 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_muldi3.o)
- .debug_frame   0x00000234       0x30 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(bpabi.o)
- .debug_frame   0x00000264       0x3c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
- .debug_frame   0x000002a0       0x28 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o)
- .debug_frame   0x000002c8       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
- .debug_frame   0x000002f4       0x28 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000031c       0x20 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x0000033c       0x20 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
+ .debug_frame   0x0000004c       0xe0 build/main.o
+ .debug_frame   0x0000012c       0x20 build/signalSlot.o
+ .debug_frame   0x0000014c       0x58 build/system_nrf51422.o
+ .debug_frame   0x000001a4       0x58 build/timer.o
+ .debug_frame   0x000001fc       0x34 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_muldi3.o)
+ .debug_frame   0x00000230       0x30 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(bpabi.o)
+ .debug_frame   0x00000260       0x3c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/armv6-m/libgcc.a(_divdi3.o)
+ .debug_frame   0x0000029c       0x28 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x000002c4       0x2c /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000002f0       0x20 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000310       0x20 /home/tulip/gcc-arm-none-eabi-5_3-2016q1-20160330-linux/gcc-arm-none-eabi-5_3-2016q1/bin/../lib/gcc/arm-none-eabi/5.3.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(_exit.o)
