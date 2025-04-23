@@ -33,8 +33,6 @@
 using namespace microhal;
 using namespace std::literals::chrono_literals;
 
-nrf51::Timer timer(*NRF_TIMER0);
-
 class RGB {
  public:
     RGB(GPIO::IOPin ledr_pin, GPIO::IOPin ledg_pin, GPIO::IOPin ledb_pin)
@@ -53,34 +51,6 @@ RGB ledE(ledER_pin, ledEG_pin, ledEB_pin);
 RGB ledF(ledFR_pin, ledFG_pin, ledFB_pin);
 std::array<RGB *, 6> leds = {&ledA, &ledF, &ledB, &ledE, &ledC, &ledD};
 
-std::array<uint8_t, 6 * 3> pwm;
-
-void timerInterrupt() {
-    static uint8_t counter;
-
-    for (size_t i = 0; i < leds.size(); i++) {
-        if (pwm[3 * i] > counter) {
-            leds[i]->r.reset();
-        } else {
-            leds[i]->r.set();
-        }
-
-        if (pwm[3 * i + 1] > counter) {
-            leds[i]->g.reset();
-        } else {
-            leds[i]->g.set();
-        }
-
-        if (pwm[3 * i + 2] > counter) {
-            leds[i]->b.reset();
-        } else {
-            leds[i]->b.set();
-        }
-    }
-
-    counter++;
-}
-
 void offAllLeds() {
     for (auto led : leds) {
         led->r.set();
@@ -97,87 +67,55 @@ void onAllLeds() {
     }
 }
 
-
-void pattern3_init() {
-    timer.prescaler(4);
-    timer.bitMode(nrf51::Timer::BitMode::Width_32Bits);
-    timer.mode(nrf51::Timer::Mode::Timer);
-
-    timer.enableInterrupt();
-
-    timer.captureCompare[0].enableInterrupt();
-    timer.captureCompare[0].enableTimerClearOnCompare();
-    timer.captureCompare[0].value(50);
-    timer.captureCompare[0].connectInterrupt(timerInterrupt);
-    timer.start();
-}
-
-bool intensity_ramp_calc(uint8_t color_index)
+class ButtonEdge : public Button
 {
-    static bool direction = true;
-    static int intensity = 0;
-    const int step = 5;
-    bool finished_sequence = false;
+    using Button::Button;
 
-    for (size_t led_index = 0; led_index < pwm.size() / 3; led_index++)
+    private:
+    bool previous_state ;
+
+    public:
+
+    bool isfallingEdge()
     {
-        if(direction)
+        bool current_state = isPressed();
+        bool result = false;
+        if(previous_state && current_state == false)
         {
-            intensity += step;
-            if(intensity >= 250)
-            {
-                direction = false;
-            }
+            result = true;
         }
-        else 
-        {
-            intensity -= step;
-            if(intensity <= 0)
-            {
-                direction = true;
-                finished_sequence = true;
-            }
-        }
-        pwm[3 * led_index + color_index] = intensity;
+        
+        previous_state = current_state;
+        return result;
     }
-    return finished_sequence;
-}
-
-void pattern1() {
-    static uint8_t state = 0;
-    offAllLeds();
-    for (auto led : leds) {
-        if (state == 0) led->r.reset();
-        if (state == 1) led->g.reset();
-        if (state == 2) led->b.reset();
-    }
-    state++;
-    if (state == 3) state = 0;
-}
-
-void pattern3() 
-{
-    static uint8_t color_index = 0;
-    uint8_t tmp = pwm[color_index];
-
-    bool finished = intensity_ramp_calc(color_index);
- 
-    if (finished) color_index++;
-    if (color_index == 3) color_index = 0;
-}
+};
 
 int main(void) 
 {
-    Button button(button_pin);
+    ButtonEdge button(button_pin);
 
     offAllLeds();
     onAllLeds();
+    std::this_thread::sleep_for(200ms); //in real it takes about 2 seconds
     uint8_t pattern_index = 0;
 
+    bool led_state = true;
     while (1) 
     {
-        // std::this_thread::sleep_for(20ms);
-        if(button.isPressed())
+        
+        if(button.isfallingEdge())
+        {
+            if(led_state)
+            {
+                led_state = false;
+            }
+            else
+            {
+                led_state = true;
+            }
+        }
+
+        if(led_state)
         {
             offAllLeds();
         }
@@ -186,7 +124,6 @@ int main(void)
             onAllLeds();
         }
         button.timeProc();
-        // pattern3();
     }
 
     return 0;
